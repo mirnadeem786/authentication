@@ -17,7 +17,7 @@ export const createUser = async (
 		createdAt: createTimeStamp(),
 		updatedAt: createTimeStamp(),
 	});
-
+	logger.info(`saving user into database`);
 	const user = await AppDataSource.manager.save(userEntity);
 	if (!user) {
 		logger.error(`Error while creating the user`);
